@@ -1,0 +1,205 @@
+:root {
+    --red:red;
+    --black:rgb(0, 0, 0);
+    --blue:rgb(40, 40, 255);
+    --light_blue:rgb(90, 90, 255);
+    --very_light_blue:rgb(100, 100, 255);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    outline: 1px solid var(--red) !important;
+}
+
+/* MENÚ HEADER */
+
+    #menu {
+        width: 100%;
+        height: 100%;
+        padding: 10px 0px 10px 0px;
+        top: 0;
+        z-index: 100;
+        position: sticky;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: var(--very_light_blue);
+    }
+
+    #menu_900px {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    /* LOGO */
+
+        #logo {
+            width: 70px;
+            height: 100%;
+            transform: scale(1);
+            transition: transform 0.3s ease;
+        }
+
+        #logo:hover {
+            transform: scale(1.1);
+        }
+
+    /* TÍTULO */
+
+        #titulo {
+            width: 300px;
+            height: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        #titulo a {
+            width: 50px;
+        }
+
+        #titulo h1 {
+            font-size: 2.1rem;
+            font-weight: 800;
+        }
+
+    /* BUSCADOR */
+
+        #buscador_productos {
+            animation: OpacityOn 0.6s;
+            width: 350px;
+            height: 55%;
+            opacity: 1;
+        }
+
+        #buscador_productos::placeholder {
+            font-style: italic;
+        }
+
+        #buscador_productos:focus {
+            animation: OpacityOff 0.6s;
+            opacity: 0.8;
+        }
+    
+    /* CONTENEDOR DE ÍCONOS */
+
+        .contenedor_iconos {
+            width: 100px;
+            height: 100%;
+            column-gap: 10px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        .contenedor_iconos i {
+            font-size: 35px;
+            transform: scale(1);
+            transition: transform 0.3s ease;
+            color: var(--black);
+        }
+
+        .contenedor_iconos i:hover {
+            transform: scale(1.1);
+        }
+
+    /* IMAGEN CARRITO*/
+
+        .contenedor_iconos img {
+            width: 45px;
+            transition: transform 0.3s ease;
+            transform: scale(1);
+        }
+
+        .contenedor_iconos img:hover {
+            transform: scale(1.1);
+        }
+
+/* MAIN */
+
+    #contenido_principal {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* CARRUSEL OFERTA */
+
+        #carrusel_oferta {
+            width: 100%;
+            height: 100%;
+            margin: 25px 0px 25px 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        /* IMÁGENES DEL CARRUSEL */
+
+            #carrusel_oferta img {
+                width: 50%;
+            }
+
+            #carrusel_oferta #imagen_carrusel_1 {
+                display: none;
+            }
+
+            #carrusel_oferta #imagen_carrusel_2 {
+                display: none;
+            }
+
+            #carrusel_oferta #imagen_carrusel_3 {
+                display: none;
+            }
+
+        /* BOTONES PARA CAMBIAR IMÁGENES */
+
+            #boton_imagen_izquierda {
+                width: 50px;
+                height: 200px;
+                z-index: 1;
+                border-radius: 50px 0px 0px 50px;
+            }
+            #boton_imagen_derecha {
+                width: 50px;
+                height: 200px;
+                z-index: 1;
+                border-radius: 0px 50px 50px 0px;
+            }
+
+/* PIE DE PÁGINA */
+
+#pie_de_pagina {
+    width: 100%;
+    height: 100px;
+    background-color: var(--very_light_blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ANIMACIONES */
+
+@keyframes OpacityOn {
+    from {
+        opacity: 0.8;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes OpacityOff {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.8;
+    }
+}
