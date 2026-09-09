@@ -20,68 +20,10 @@ imagen_carrusel_1.style.display = "flex";
 
 // BOTÓN IZQUIERDA
 
-boton_imagen_izquierda.addEventListener("click", () => {
-    if (numeroImagen == 0) {
-        imagen_carrusel_1.style.display = "none";
-        imagen_carrusel_3.style.display = "none";
-        imagen_carrusel_3.style.display = "flex";
-        numeroImagen = 2;
-    }
-    else if (numeroImagen == 1) {
-        imagen_carrusel_1.style.display = "flex";
-        imagen_carrusel_2.style.display = "none";
-        imagen_carrusel_3.style.display = "none";
-        numeroImagen = 0;
-    }
-    else if (numeroImagen == 2) {
-        imagen_carrusel_1.style.display = "none";
-        imagen_carrusel_2.style.display = "flex";
-        imagen_carrusel_3.style.display = "none";
-        numeroImagen = 1;
-    }
-});
-
 boton_imagen_derecha.addEventListener("click", () => {
-    if (numeroImagen == 0) {
-        imagen_carrusel_1.style.display = "none";
-        imagen_carrusel_2.style.display = "flex";
-        imagen_carrusel_3.style.display = "none";
-        numeroImagen = 1;
-    }
-    else if (numeroImagen == 1) {
-        imagen_carrusel_1.style.display = "none";
-        imagen_carrusel_2.style.display = "none";
-        imagen_carrusel_3.style.display = "flex";
-        numeroImagen = 2;
-    }
-    else if (numeroImagen == 2) {
-        imagen_carrusel_1.style.display = "flex";
-        imagen_carrusel_2.style.display = "none";
-        imagen_carrusel_3.style.display = "none";
-        numeroImagen = 0;
-    }
-});
-
-// PARA QUE ESTÉ PASANDO IMÁGENES
-
-setInterval(() => {
-    numeroImagen++;
-    if (numeroImagen == 0) {
-        imagen_carrusel_1.style.display = "none";
-        imagen_carrusel_2.style.display = "flex";
-        imagen_carrusel_3.style.display = "none";
-        numeroImagen = 1;
-    }
     if (numeroImagen == 1) {
         imagen_carrusel_1.style.display = "none";
-        imagen_carrusel_2.style.display = "none";
-        imagen_carrusel_3.style.display = "flex";
-        numeroImagen = 2;
-    }
-    if (numeroImagen == 2) {
-        imagen_carrusel_1.style.display = "flex";
-        imagen_carrusel_2.style.display = "none";
         imagen_carrusel_3.style.display = "none";
-        numeroImagen = 0;
+        numeroImagen = 3;
     }
-}, 3000);
+});

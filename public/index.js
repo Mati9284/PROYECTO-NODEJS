@@ -1,20 +1,41 @@
-//BUSCADOR HTML
+const seccionProductos = document.querySelector("#productos");
 
-    const buscador_de_productos = document.getElementById("buscador_productos");
-    const regex_buscador_de_productos_gorras = /gorras|gorra|/i;
-    
-// PARA GUARDAR EL VALOR DEL BUSCADOR
+fetch("/productos")
+    .then(respuesta => respuesta.json())
+    .then(datos => {
 
-let valor_buscador_de_productos = "";
+        datos.forEach(producto => {
+            if (producto.precioDescuento.toLocaleString('es-AR') !== "") {
+                seccionProductos.innerHTML += `
+                <a href="" class="cajaProducto">
+                    <img class="imagenProducto" src="${producto.urlImagen}" alt="${producto.nombre}">
+                    <h3 class="nombreProducto">${producto.nombre}</h3>
+                    <p class="precioProductoOferta">$${producto.precioDescuento.toLocaleString('es-AR')}</p>
+                    <p class="precioProductoTachado">$${producto.precio.toLocaleString('es-AR')}</p>
+                </a>
+            `;
+            }
+            else {
+                seccionProductos.innerHTML += `
+                <a href="" class="cajaProducto">
+                    <img class="imagenProducto" src="${producto.urlImagen}" alt="${producto.nombre}">
+                    <h3 class="nombreProducto">${producto.nombre}</h3>
+                    <p class="precioProducto">$${producto.precio.toLocaleString('es-AR')}</p>
+                </a>
+            `;
+            }
+        });
 
-buscador_de_productos.addEventListener("input", function() {
-    valor_buscador_de_productos = buscador_de_productos.value;
-});
+    });
 
-// PARA COMPROBAR QUÉ BUSCÓ
+fetch("/productos/oferta")
+    .then(respuesta => respuesta.json())
+    .then(datos => {
 
-buscador_de_productos.addEventListener("keydown", function(event) {
-    if (event.key === "Enter" && regex_buscador_de_productos_gorras.test(valor_buscador_de_productos) == true) {
-        
-    }
-});
+        datos.forEach(producto => {
+            seccionProductos.innerHTML += `
+                
+            `;
+        });
+
+    });
